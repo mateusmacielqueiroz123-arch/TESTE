@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Instituto GS — Entregáveis e Valores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --navy:#05070d; --card:#0b0e14; --card2:#0e1220; --blue:#3e7bfa; --gold:#e8c77a; --gold-soft:#f2e2b8; --green:#6fd19a;
+    --text:#f2f4f7; --text2:#9aa5b1; --text3:#6b7480; --divider:#1c2029; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; min-height:100vh; font-family:'Inter',sans-serif; color:var(--text); padding:56px 16px 72px;
+    background: radial-gradient(ellipse 1000px 620px at 50% -8%, rgba(62,123,250,.16), transparent 60%),
+                radial-gradient(ellipse 800px 500px at 90% 100%, rgba(232,199,122,.07), transparent 55%), var(--navy); }
+  .wrap{ max-width:860px; margin:0 auto; }
+  .intro{ text-align:center; margin-bottom:36px; }
+  .eyebrow{ font-size:12px; letter-spacing:.16em; color:var(--gold-soft); margin-bottom:14px; }
+  h1{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:42px; line-height:1.12; margin:0 0 12px; }
+  .intro p{ font-size:15px; color:var(--text2); line-height:1.6; margin:0; }
+  .totals{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:40px; }
+  .cell{ background:var(--card); border:1px solid var(--divider); border-radius:14px; padding:18px 14px; text-align:center; }
+  .cell .k{ font-size:10.5px; letter-spacing:.1em; color:var(--text2); margin-bottom:8px; }
+  .cell .v{ font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:600; }
+  .cell.done .v{ color:var(--green); } .cell.todo .v{ color:var(--gold); }
+  h2{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:25px; margin:34px 0 6px; display:flex; align-items:baseline; gap:12px; }
+  h2 small{ font-family:'Inter',sans-serif; font-size:12.5px; font-weight:500; color:var(--text2); }
+  .row{ display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:12px; background:var(--card2); border:1px solid var(--divider); margin-top:8px; }
+  .dot{ width:22px; height:22px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; }
+  .row.done .dot{ background:var(--green); color:var(--navy); } .row.todo .dot{ border:1.5px solid var(--gold); }
+  .name{ flex:1; min-width:0; } .name b{ display:block; font-size:14.5px; font-weight:600; }
+  .name span{ font-size:12.5px; color:var(--text2); line-height:1.45; display:block; margin-top:2px; }
+  .price{ font-size:14.5px; font-weight:700; white-space:nowrap; }
+  .row.done .price{ color:var(--green); } .row.todo .price{ color:var(--gold-soft); }
+  .note{ margin-top:34px; padding:18px 20px; border-radius:14px; border:1px dashed rgba(232,199,122,.35); background:rgba(232,199,122,.04); }
+  .note b{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--gold-soft); display:block; margin-bottom:8px; }
+  .note li{ font-size:13px; color:var(--text2); line-height:1.6; }
+  .note ul{ margin:0; padding-left:18px; }
+  .credit{ margin-top:44px; font-size:11.5px; color:var(--text3); letter-spacing:.08em; text-align:center; } .credit b{ color:var(--gold-soft); }
+  @media (max-width:560px){ .totals{ grid-template-columns:1fr; } h1{ font-size:32px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="intro">
+    <div class="eyebrow">ENTREGÁVEIS E VALORES</div>
+    <h1>Instituto GS<br>Educação e Saúde</h1>
+    <p>O que já foi entregue e o que falta, com o valor de cada item.</p>
+  </div>
+
+  <div class="totals">
+    <div class="cell done"><div class="k">JÁ ENTREGUE</div><div class="v">R$ 750</div></div>
+    <div class="cell todo"><div class="k">FALTA ENTREGAR</div><div class="v">R$ 3.000</div></div>
+    <div class="cell"><div class="k">TOTAL DO PROJETO</div><div class="v">R$ 3.750</div></div>
+  </div>
+
+  <h2>Já entregue <small>2 itens</small></h2>
+  <div class="row done"><div class="dot">✓</div><div class="name"><b>Instagram @institutogs.educa</b><span>Criação e organização do perfil: bio, capa, destaques e link na bio</span></div><div class="price">R$ 500</div></div>
+  <div class="row done"><div class="dot">✓</div><div class="name"><b>01 SOBRE OS CURSOS - INSTITUTO GS</b><span>Edição de vídeo · Reels de 32 s com narração, motion, trilha e efeitos sonoros</span></div><div class="price">R$ 250</div></div>
+
+  <h2>Falta entregar · captação e edição <small>R$ 500 por vídeo · 5 vídeos</small></h2>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>01 · Depoimento implante</b><span>Depoimento</span></div><div class="price">R$ 500</div></div>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>02 · Depoimento reabilitação</b><span>Depoimento</span></div><div class="price">R$ 500</div></div>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>03 · Harmonização facial</b><span>Procedimento</span></div><div class="price">R$ 500</div></div>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>04 · Vídeo Dra. Pollyanna</b><span>Institucional · prioridade na edição</span></div><div class="price">R$ 500</div></div>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>05 · Vídeo Dr. Cássio</b><span>Institucional · prioridade na edição</span></div><div class="price">R$ 500</div></div>
+
+  <h2>Falta entregar · apenas edição <small>R$ 250 por vídeo · 2 vídeos</small></h2>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>Tratamento de facetas</b><span>Com material que a clínica já tem</span></div><div class="price">R$ 250</div></div>
+  <div class="row todo"><div class="dot"></div><div class="name"><b>Sobre diagnósticos</b><span>"A partir de agora nossa clínica será voltada sobre diagnóstico e prevenção"</span></div><div class="price">R$ 250</div></div>
+
+  <div class="note">
+    <b>Ainda sem definição</b>
+    <ul>
+      <li>Data da captação dos 5 vídeos (ideal gravar todos no mesmo dia, na clínica).</li>
+      <li>Datas de entrega de cada vídeo e data do lançamento do perfil.</li>
+      <li>Roteiros dos vídeos de facetas, diagnósticos e dos 5 de captação.</li>
+      <li>Forma e datas de pagamento.</li>
+    </ul>
+  </div>
+
+  <div class="credit">RESUMO POR <b>QIROIZ</b></div>
+</div>
+</body>
+</html>
