@@ -486,6 +486,7 @@ export const Video: React.FC = () => {
       <Img src={staticFile(`tex/grain${Math.floor(t * 12) % 4}.png`)} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", opacity: 0.16, mixBlendMode: "overlay" }} />
       <AbsoluteFill style={{ background: "radial-gradient(ellipse at 50% 48%, transparent 60%, rgba(0,0,0,.28) 100%)" }} />
       <Audio src={staticFile("audio/voz.wav")} />
+      <Audio src={staticFile("audio/sfx.wav")} volume={0.45} />
       <Audio src={staticFile("audio/trilha.wav")} volume={(f) => interpolate(f / FPS, [0, 26.6, 27.2], [0.26, 0.26, 0.8], cl)} />
     </AbsoluteFill>
   );
