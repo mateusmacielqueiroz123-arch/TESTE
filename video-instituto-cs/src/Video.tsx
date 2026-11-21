@@ -10,7 +10,7 @@ import "@fontsource/cormorant-garamond/600.css";
 export const FPS = 30;
 export const TOTAL = 32;
 
-// identidade Instituto CS, aplicada ao estilo da referência (claro x preto, uma cor de destaque)
+// identidade Instituto GS, aplicada ao estilo da referência (claro x preto, uma cor de destaque)
 const C = {
   navy: "#05070d", cream: "#f8f4ec", ink: "#14161b", inkSoft: "#8b8f97",
   blueDeep: "#123a6b", blueMid: "#1b4f91", blue: "#3e7bfa", blueInk: "#1f5fe0",
@@ -88,16 +88,16 @@ const Barcode: React.FC<{ x: number; y: number; at: number }> = ({ x, y, at }) =
   return (
     <div style={{ position: "absolute", left: x, top: y, opacity: ramp(t, at, at + 0.5), filter: `blur(${(1 - ramp(t, at, at + 0.5)) * 8}px)` }}>
       <div style={{ display: "flex", gap: 3, height: 62 }}>{[5, 2, 3, 6, 2, 2, 4, 7, 2, 3, 5, 2, 6, 3, 2, 4, 2, 6].map((w, i) => <div key={i} style={{ width: w, background: dark ? "#fff" : C.ink }} />)}</div>
-      <div style={{ fontFamily: INTER, fontWeight: 600, fontSize: 13, letterSpacing: "0.2em", color: dark ? "#fff" : C.ink, marginTop: 8 }}>CS-2026-0001</div>
+      <div style={{ fontFamily: INTER, fontWeight: 600, fontSize: 13, letterSpacing: "0.2em", color: dark ? "#fff" : C.ink, marginTop: 8 }}>GS-2026-0001</div>
     </div>
   );
 };
-const Meta: React.FC<{ x: number; y: number; at: number; text?: string }> = ({ x, y, at, text = "INSTITUTO CS  ·  EDUCAÇÃO E SAÚDE" }) => {
+const Meta: React.FC<{ x: number; y: number; at: number; text?: string }> = ({ x, y, at, text = "INSTITUTO GS  ·  EDUCAÇÃO E SAÚDE" }) => {
   const t = useT(); const dark = useContext(Dark); const col = dark ? "rgba(255,255,255,.75)" : C.ink;
   return (
     <div style={{ position: "absolute", left: x, top: y, display: "flex", alignItems: "center", gap: 12, opacity: ramp(t, at, at + 0.6), fontFamily: INTER, fontWeight: 700, fontSize: 15, letterSpacing: "0.2em", color: col }}>
       <div style={{ width: 22, height: 22, borderRadius: "50%", background: `conic-gradient(${col} 0 25%, transparent 0 50%, ${col} 0 75%, transparent 0)`, border: `2px solid ${col}` }} />
-      <div style={{ padding: "3px 8px", borderRadius: 5, background: col, color: dark ? "#000" : C.cream }}>CS</div>{text}
+      <div style={{ padding: "3px 8px", borderRadius: 5, background: col, color: dark ? "#000" : C.cream }}>GS</div>{text}
     </div>
   );
 };
@@ -125,7 +125,7 @@ const Obj: React.FC<{ src: string; x: number; y: number; w: number; h: number; a
         <circle cx="50" cy="50" r="48.5" fill="none" stroke={C.gold} strokeWidth="0.7" strokeDasharray={`${ramp(t, at, at + 1) * 70} 400`} strokeLinecap="round" />
         <circle cx="50" cy="50" r="46.6" fill="none" stroke={C.blue} strokeWidth="0.5" strokeDasharray="2 5" opacity={0.7 * ramp(t, at + 0.2, at + 1)} /></svg>
         : <><div style={{ position: "absolute", left: "34%", top: -26, width: 190, height: 54, background: "rgba(232,199,122,.62)", transform: "rotate(-5deg)", boxShadow: "0 3px 6px rgba(0,0,0,.14)", opacity: ramp(t, at + 0.25, at + 0.45) }} />
-            <div style={{ position: "absolute", right: 30, bottom: 26, fontFamily: INTER, fontWeight: 700, fontSize: 13, letterSpacing: "0.18em", color: "#fdfbf6", opacity: 0.85 }}>CS · {src.toUpperCase()}</div></>}
+            <div style={{ position: "absolute", right: 30, bottom: 26, fontFamily: INTER, fontWeight: 700, fontSize: 13, letterSpacing: "0.18em", color: "#fdfbf6", opacity: 0.85 }}>GS · {src.toUpperCase()}</div></>}
     </div>
   );
 };
@@ -190,7 +190,7 @@ const PinCard: React.FC<{ x: number; y: number; w: number; at: number; title: st
   );
 };
 
-// ---------- logo Instituto CS ----------
+// ---------- logo Instituto GS ----------
 const Logo: React.FC<{ size: number; lt: number }> = ({ size, lt }) => {
   const bg = sp(lt, 0, { damping: 12, stiffness: 110, mass: 0.9 });
   const ring1 = ramp(lt, 0.15, 1.0), ring2 = ramp(lt, 0.3, 1.2);
@@ -219,10 +219,10 @@ const Logo: React.FC<{ size: number; lt: number }> = ({ size, lt }) => {
         <circle cx="110" cy="110" r="99" fill="none" stroke={C.gold} strokeWidth="1.2" opacity="0.85" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ring1} transform="rotate(-90 110 110)" />
         <circle cx="110" cy="110" r="93" fill="none" stroke={C.gold} strokeWidth="0.6" opacity="0.5" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ring2} transform="rotate(90 110 110)" />
         <text fontFamily={INTER} fontSize="10.5" fontWeight="700" letterSpacing={3 + (1 - arc) * 6} fill={C.goldSoft} opacity={arc}>
-          <textPath href="#arcTop" startOffset="50%" textAnchor="middle">INSTITUTO CS</textPath>
+          <textPath href="#arcTop" startOffset="50%" textAnchor="middle">INSTITUTO GS</textPath>
         </text>
         <g transform={`translate(110 110) scale(${0.3 + 0.7 * cs}) translate(-110 -110)`} opacity={Math.min(1, cs * 1.4)}>
-          <text x="110" y="128" textAnchor="middle" fontFamily={SERIF} fontSize="54" fontWeight="600" fill={C.goldSoft}>CS</text>
+          <text x="110" y="128" textAnchor="middle" fontFamily={SERIF} fontSize="56" fontWeight="600" fill={C.gold}>GS</text>
         </g>
         <line x1={94 - 24 * lines} y1="140" x2="94" y2="140" stroke={C.gold} strokeWidth="1" opacity="0.7" />
         <line x1="126" y1="140" x2={126 + 24 * lines} y2="140" stroke={C.gold} strokeWidth="1" opacity="0.7" />
@@ -379,7 +379,7 @@ const S8: React.FC = () => {
 const S9: React.FC = () => (
   <>
     <Ribbon d="M 300 -100 C 640 300 240 820 560 1250 C 760 1520 860 1800 980 2100" at={19.38} />
-    <PinCard x={190} y={470} w={700} at={19.4} title="Instituto CS" note="CURSOS RÁPIDOS  ·  LOTE 01/2026" items={[["Prático", 19.4, true], ["Rápido", 20.36, true], ["Com resultado", 21.16, true]]} />
+    <PinCard x={190} y={470} w={700} at={19.4} title="Instituto GS" note="CURSOS RÁPIDOS  ·  LOTE 01/2026" items={[["Prático", 19.4, true], ["Rápido", 20.36, true], ["Com resultado", 21.16, true]]} />
     <Meta x={330} y={1440} at={19.8} />
   </>
 );
@@ -401,12 +401,12 @@ const S10: React.FC = () => {
         <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
           <Logo size={170} lt={t - 22.4} />
           <div>
-            <div style={{ fontFamily: INTER, fontWeight: 700, fontSize: 46, letterSpacing: "-0.04em", color: C.ink }}>institutocs.edu</div>
-            <div style={{ fontFamily: INTER, fontWeight: 500, fontSize: 30, letterSpacing: "-0.02em", color: C.inkSoft, marginTop: 6 }}>Instituto CS | Educação e Saúde</div>
-            <div style={{ fontFamily: INTER, fontWeight: 600, fontSize: 24, color: followed ? C.blueInk : C.inkSoft, marginTop: 8 }}>{followed ? "46 seguidores  (+1: você)" : "45 seguidores"}</div>
+            <div style={{ fontFamily: INTER, fontWeight: 700, fontSize: 46, letterSpacing: "-0.04em", color: C.ink }}>institutogs.educa</div>
+            <div style={{ fontFamily: INTER, fontWeight: 500, fontSize: 30, letterSpacing: "-0.02em", color: C.inkSoft, marginTop: 6 }}>INSTITUTO GS | Educação e Saúde</div>
+            <div style={{ fontFamily: INTER, fontWeight: 600, fontSize: 24, color: followed ? C.blueInk : C.inkSoft, marginTop: 8 }}>{followed ? "52 seguidores  (+1: você)" : "51 seguidores"}</div>
           </div>
         </div>
-        <div style={{ fontFamily: INTER, fontWeight: 500, fontSize: 31, lineHeight: 1.5, letterSpacing: "-0.02em", color: C.ink, marginTop: 30 }}>Cursos rápidos na área da saúde<br /><span style={{ color: C.inkSoft }}>Odontologia · Fisioterapia · Enfermagem · Estética · Biomedicina</span></div>
+        <div style={{ fontFamily: INTER, fontWeight: 500, fontSize: 31, lineHeight: 1.5, letterSpacing: "-0.02em", color: C.ink, marginTop: 30 }}>Cursos rápidos na área da saúde<br /><span style={{ color: C.inkSoft }}>Odontologia · Fisioterapia · Enfermagem · Estética · Biomedicina</span><br />Diagnóstico e Prevenção</div>
         <div style={{ position: "relative", marginTop: 34, padding: "26px 0", borderRadius: 20, textAlign: "center", fontFamily: INTER, fontWeight: 700, fontSize: 40, letterSpacing: "-0.03em",
           color: followed ? C.ink : "#fff", background: followed ? "#eceae5" : C.blueInk, transform: `scale(${press})` }}>{followed ? "Seguindo ✓" : "Seguir"}</div>
         <div style={{ position: "absolute", left: 410 - rip * 260, top: 468 - rip * 260, width: rip * 520, height: rip * 520, borderRadius: "50%", background: "rgba(31,95,224,.22)", border: `5px solid ${C.blueInk}`, opacity: followed ? 1 - rip : 0 }} />
@@ -429,9 +429,9 @@ const S11: React.FC = () => {
       {[0, 1].map((i) => { const r = ramp(lt, 0.2 + i * 0.35, 2.2 + i * 0.35, 0, 1, Easing.out(Easing.cubic)); return <div key={i} style={{ position: "absolute", left: 540 - 250 - r * 380, top: 710 - 250 - r * 380, width: 500 + r * 760, height: 500 + r * 760, borderRadius: "50%", border: `1.5px solid ${C.gold}`, opacity: (1 - r) * 0.55 }} />; })}
       <div style={{ position: "absolute", left: 290, top: 460, filter: "drop-shadow(0 0 80px rgba(62,123,250,.6))" }}><Logo size={500} lt={lt} /></div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 1060, display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <div style={{ fontFamily: INTER, fontWeight: 700, fontSize: 104, letterSpacing: "-0.055em", color: "#fff", textShadow: "0 0 40px rgba(255,255,255,.4)", ...soft(name) }}>Instituto CS</div>
+        <div style={{ fontFamily: INTER, fontWeight: 700, fontSize: 104, letterSpacing: "-0.055em", color: "#fff", textShadow: "0 0 40px rgba(255,255,255,.4)", ...soft(name) }}>Instituto GS</div>
         <div style={{ fontFamily: INTER, fontWeight: 600, fontSize: 30, letterSpacing: "0.34em", color: C.goldSoft, marginTop: 10, ...soft(tag) }}>EDUCAÇÃO E SAÚDE</div>
-        <div style={{ marginTop: 70, padding: "22px 52px", borderRadius: 999, background: C.gold, fontFamily: INTER, fontWeight: 700, fontSize: 48, letterSpacing: "-0.03em", color: C.navy, boxShadow: "0 0 80px rgba(232,199,122,.5)", ...soft(pill) }}>@institutocs.edu</div>
+        <div style={{ marginTop: 70, padding: "22px 52px", borderRadius: 999, background: C.gold, fontFamily: INTER, fontWeight: 700, fontSize: 48, letterSpacing: "-0.03em", color: C.navy, boxShadow: "0 0 80px rgba(232,199,122,.5)", ...soft(pill) }}>@institutogs.educa</div>
         <div style={{ marginTop: 40, fontFamily: INTER, fontWeight: 500, fontSize: 40, letterSpacing: "-0.03em", color: "rgba(255,255,255,.7)", ...soft(cta) }}>Siga. O lançamento está chegando.</div>
         <div style={{ marginTop: 150, fontFamily: INTER, fontWeight: 600, fontSize: 15, letterSpacing: "0.3em", color: "rgba(255,255,255,.3)", ...soft(cta) }}>MOTION POR QIROIZ  ·  REDENÇÃO, PA</div>
       </div>
@@ -450,13 +450,13 @@ const Hud: React.FC = () => {
     <AbsoluteFill style={{ mixBlendMode: "difference", opacity: 0.7 }}>
       <svg width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>{[[64, 110], [64, 1600], [1016, 1600]].map(([x, y]) => mark(x, y))}</svg>
       <div style={{ position: "absolute", left: 100, top: 96, fontFamily: INTER, fontWeight: 600, fontSize: 17, letterSpacing: "0.18em", color: "#fff", lineHeight: 1.7 }}>
-        <div>CS_SOBRE-OS-CURSOS  ·  {tc}</div>
+        <div>GS_SOBRE-OS-CURSOS  ·  {tc}</div>
         <div style={{ opacity: lp, transform: `translateX(${(1 - lp) * -20}px)` }}>{LABELS[li][1]}</div>
       </div>
       <svg width={150} height={150} viewBox="0 0 150 150" style={{ position: "absolute", left: 880, top: 60, transform: `rotate(${t * 22}deg)` }}>
         <defs><path id="seal" d="M 75 75 m -56 0 a 56 56 0 1 1 112 0 a 56 56 0 1 1 -112 0" /></defs>
-        <text fontFamily={INTER} fontWeight="700" fontSize="13.5" letterSpacing="3.1" fill="#fff"><textPath href="#seal">INSTITUTO CS • EDUCAÇÃO E SAÚDE • EM BREVE • </textPath></text>
-        <text x="75" y="88" textAnchor="middle" fontFamily={SERIF} fontWeight="600" fontSize="38" fill="#fff" transform={`rotate(${-t * 22} 75 75)`}>CS</text>
+        <text fontFamily={INTER} fontWeight="700" fontSize="13.5" letterSpacing="3.1" fill="#fff"><textPath href="#seal">INSTITUTO GS • EDUCAÇÃO E SAÚDE • EM BREVE • </textPath></text>
+        <text x="75" y="88" textAnchor="middle" fontFamily={SERIF} fontWeight="600" fontSize="38" fill="#fff" transform={`rotate(${-t * 22} 75 75)`}>GS</text>
       </svg>
     </AbsoluteFill>
   );
